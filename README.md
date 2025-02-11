@@ -16,8 +16,8 @@ Ensure you have the following installed:
 Clone the repository and install dependencies:
 
 ```sh
-git clone https://github.com/your-repo/assignment-strategyn.git
-cd assignment-strategyn
+git clone https://github.com/your-repo/rag-app-typescript.git
+cd rag-app-typescript
 npm install
 ```
 
