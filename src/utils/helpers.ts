@@ -1,5 +1,6 @@
 import { PdfReader } from 'pdfreader';
 import crypto from "crypto";
+import logger from './logger';
 
 const parsePDF = async (pdfBuffer: Buffer): Promise<string> => {
     let pdfContent = "";
@@ -7,10 +8,10 @@ const parsePDF = async (pdfBuffer: Buffer): Promise<string> => {
     return new Promise((resolve, reject) => {
          new PdfReader().parseBuffer(pdfBuffer, (err, item) => {
             if (err) {
-                console.log("error:", err);
+                logger.logError(err);
                 reject(err);
             } else if (!item) {
-                console.log("end of buffer");
+                logger.logVerbose("end of buffer");
                 resolve(pdfContent);
             } else if (item.text) {
                 pdfContent = pdfContent.concat(item.text);

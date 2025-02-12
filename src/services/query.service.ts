@@ -67,7 +67,6 @@ export class QueryService {
 
             if (!contextText) {
                 logger.logInfo("No relevant chunks found. Checking if OpenAI can answer directly...");
-                // console.log("No relevant chunks found. Checking if OpenAI can answer directly...");
 
             const openAIResponse = await getAICompletion(
                 `Can you answer this question without any external information? Respond with only 'yes' or 'no': ${query}`
